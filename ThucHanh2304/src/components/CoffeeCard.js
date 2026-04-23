@@ -5,10 +5,32 @@ const { width } = Dimensions.get('window');
 const cardWidth = width / 2 - 24; // Tính toán để 2 thẻ vừa khít màn hình, có khoảng trống ở giữa
 
 export default function CoffeeCard({ item, onPress }) {
+  // Xử lý image: nếu là string path, require nó; nếu là URL hoặc require object thì dùng trực tiếp
+  const getImageSource = () => {
+    if (typeof item.image === 'string') {
+      // Nếu là URL web
+      if (item.image.startsWith('http')) {
+        return { uri: item.image };
+      }
+      // Nếu là string path tương đối, convert sang require
+      try {
+        if (item.image.includes('z7756140639977')) {
+          return require('../../assets/z7756140639950_e35152b7ddc3d09c66451326f3907ffa.jpg');
+        } else if (item.image.includes('z7756140639950')) {
+          return require('../../assets/z7756140639950_e35152b7ddc3d09c66451326f3907ffa.jpg');
+        }
+      } catch (e) {
+        return require('../../assets/z7756140639977_d3d83e338580d691465682affbf57cb9.jpg');
+      }
+    }
+    // Nếu đã là require object thì dùng trực tiếp
+    return item.image;
+  };
+
   return (
     <TouchableOpacity style={styles.card} onPress={onPress} activeOpacity={0.8}>
       <View style={styles.imageContainer}>
-        <Image source={{ uri: item.image }} style={styles.image} />
+        <Image source={getImageSource()} style={styles.image} />
         {/* Đánh giá (Rating Badge) đè lên góc phải của ảnh */}
         <View style={styles.ratingBadge}>
           <Text style={styles.star}>⭐</Text>

@@ -15,5 +15,23 @@
     "image": "../../assets/z7756140639977_d3d83e338580d691465682affbf57cb9.jpg",
     "description": "Smooth flat white",
     "category": "Espresso"
+  },
+  {
+    "id": 3,
+    "name": "Flat White",
+    "price": 3.53,
+    "rating": 4.7,
+    "image": "../../assets/z7756140639977_d3d83e338580d691465682affbf57cb9.jpg",
+    "description": "Smooth flat white",
+    "category": "Espresso"
+  },
+  {
+    "id": 4,
+    "name": "Flat White",
+    "price": 3.53,
+    "rating": 4.7,
+    "image": "../../assets/z7756140639977_d3d83e338580d691465682affbf57cb9.jpg",
+    "description": "Smooth flat white",
+    "category": "Espresso"
   }
 ]
